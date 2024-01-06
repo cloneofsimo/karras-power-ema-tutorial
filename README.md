@@ -165,7 +165,7 @@ emapoints = np.concatenate((y_t_ema1[checkpoint_index], y_t_ema2[checkpoint_inde
 y_t_ema3 = np.dot(x, emapoints)
 ```
 
-where `solve_weights` is the function that solves the linear least square problem. You can find the implementation in `solve_weights.py`.
+where `solve_weights` is the function that solves the linear least square problem. You can find the implementation in `ema_eq.py`.
 
 The result is the EMA with $\gamma_3$.
 
