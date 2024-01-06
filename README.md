@@ -119,7 +119,9 @@ $$\min \left \| g - \sum_{i=1}^K \alpha_i f_i \right \|_2^2$$
 
 if we define $\| f \|_2 = \sqrt{\langle f, f \rangle}$, expanding the norm, we get
 
-$$\min \left \| g \right \|_2^2 - 2 \sum_{i=1}^K \alpha_i \langle g, f_i \rangle + \sum_{i=1}^K \sum_{j=1}^K \alpha_i \alpha_j \langle f_i, f_j \rangle$$
+$$
+\min \left \| g \right \|_2^2 - 2 \sum_{i=1}^K \alpha_i \langle g, f_i \rangle + \sum_{i=1}^K \sum_{j=1}^K \alpha_i \alpha_j \langle f_i, f_j \rangle
+$$
 
 Ha, so substituting $A_{i,j} = \langle f_i, f_j \rangle$ and $b_i = \langle g, f_i \rangle$, we actually just had linear least square problem!
 
@@ -147,7 +149,6 @@ Ok, but reminder this is just for a power-function EMA. You can use this for any
 In the above code, you saved two copies of EMA, each with different $\gamma$. Now you want to recover EMA with $\gamma_3$. Suppose you saved $n$ checkpoints, at iteration $i_1, i_2, \cdots, i_n$. Then you can do the following.
 
 ```python
-
 t_checkpoint = t[checkpoint_index]
     
 ts = np.concatenate((t_checkpoint, t_checkpoint))
